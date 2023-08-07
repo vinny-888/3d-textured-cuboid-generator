@@ -9,15 +9,18 @@ const FRONT = './images/front.png';
 const io = new NodeIO();
 const doc = new Document();
 
+let width = 1;
+let height = 1;
+let depth = 1;
 const vertices = [
-  [-0.5, -0.5, 0.5],
-  [0.5, -0.5, 0.5],
-  [0.5, 0.5, 0.5],
-  [-0.5, 0.5, 0.5],
-  [-0.5, -0.5, -0.5],
-  [0.5, -0.5, -0.5],
-  [0.5, 0.5, -0.5],
-  [-0.5, 0.5, -0.5],
+  [-width, -height, depth],
+  [width, -height, depth],
+  [width, height, depth],
+  [-width, height, depth],
+  [-width, -height, -depth],
+  [width, -height, -depth],
+  [width, height, -depth],
+  [-width, height, -depth],
 ];
 
 const faces = [
