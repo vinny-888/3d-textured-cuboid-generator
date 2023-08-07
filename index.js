@@ -2,9 +2,9 @@ import { Document, NodeIO } from '@gltf-transform/core';
 import { unpartition } from '@gltf-transform/functions';
 import sharp from 'sharp';
 
-const TOP = './images/top.png';
+// const TOP = './images/top.png';
 const FRONT = './images/front.png';
-const SIDE = './images/side.png';
+// const SIDE = './images/side.png';
 
 const io = new NodeIO();
 const doc = new Document();
@@ -42,17 +42,17 @@ const indices = faces.reduce((acc, face) => {
 
 const primitive = doc.createPrimitive();
 
-const topImage = await sharp(TOP).resize(512, 512).toBuffer();
+// const topImage = await sharp(TOP).resize(512, 512).toBuffer();
 const frontImage = await sharp(FRONT).resize(512, 512).toBuffer();
-const sideImage = await sharp(SIDE).resize(512, 512).toBuffer();
+// const sideImage = await sharp(SIDE).resize(512, 512).toBuffer();
 
 // Create materials
-const topMaterial = doc.createMaterial('topMaterial')
-    .setBaseColorTexture(doc.createTexture().setImage(topImage).setMimeType('image/png'));
+// const topMaterial = doc.createMaterial('topMaterial')
+//     .setBaseColorTexture(doc.createTexture().setImage(topImage).setMimeType('image/png'));
 const frontMaterial = doc.createMaterial('frontMaterial')
     .setBaseColorTexture(doc.createTexture().setImage(frontImage).setMimeType('image/png'));
-const sideMaterial = doc.createMaterial('sideMaterial')
-    .setBaseColorTexture(doc.createTexture().setImage(sideImage).setMimeType('image/png'));
+// const sideMaterial = doc.createMaterial('sideMaterial')
+//     .setBaseColorTexture(doc.createTexture().setImage(sideImage).setMimeType('image/png'));
 
 // Set the material on the primitive
 primitive.setMaterial(frontMaterial);
